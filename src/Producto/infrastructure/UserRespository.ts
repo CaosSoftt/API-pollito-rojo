@@ -75,6 +75,8 @@ export class productoRepositori implements ProductoRepository {
     return await new Promise((resolve, reject) => {
       const sql = `INSERT INTO caosdb.users(Nombre,Correo,Password) VALUES ('${Nombre}','${Correo}','${Password}')`;
       mysql.connection.query(sql, (error: QueryError, results: Producto) => {
+        console.log(error);
+        
         if (error) {
           reject(error);
         } else {
